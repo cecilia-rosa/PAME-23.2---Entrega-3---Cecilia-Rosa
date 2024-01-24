@@ -7,9 +7,10 @@ import { CompraModule } from './compra/compra.module';
 import { ProdutoModule } from './produto/produto.module';
 import { CupomModule } from './cupom/cupom.module';
 import { CategoriaModule } from './categoria/categoria.module';
+import { CarrinhoModule } from './carrinho/carrinho.module';
 
 @Module({
-  imports: [ClienteModule, VendedorModule, CompraModule, ProdutoModule, CupomModule, CategoriaModule],
+  imports: [ClienteModule, VendedorModule, CompraModule, ProdutoModule, CupomModule, CategoriaModule, CarrinhoModule],
   controllers: [AppController],
   providers: [AppService],
 })
