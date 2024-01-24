@@ -3,9 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClienteModule } from './cliente/cliente.module';
 import { VendedorModule } from './vendedor/vendedor.module';
+import { CompraModule } from './compra/compra.module';
+import { ProdutoModule } from './produto/produto.module';
+import { CupomModule } from './cupom/cupom.module';
+import { CategoriaModule } from './categoria/categoria.module';
 
 @Module({
-  imports: [ClienteModule, VendedorModule],
+  imports: [ClienteModule, VendedorModule, CompraModule, ProdutoModule, CupomModule, CategoriaModule],
   controllers: [AppController],
   providers: [AppService],
 })
