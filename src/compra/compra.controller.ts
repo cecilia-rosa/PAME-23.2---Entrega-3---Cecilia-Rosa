@@ -8,12 +8,12 @@ import { VendedorGuard } from './vendedorguard';
 export class CompraController {
   constructor(private readonly compraService: CompraService) {}
 
-  @Post()
+  @Post('criar')
   create(@Body() createCompraDto: CreateCompraDto) {
     return this.compraService.create(createCompraDto);
   }
 
-  @Get()
+  @Get('todas')
   @UseGuards(VendedorGuard)
   findAll() {
     return this.compraService.findAll();
@@ -24,12 +24,12 @@ export class CompraController {
     return this.compraService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('/atualizar/:id')
   update(@Param('id') id: string, @Body() updateCompraDto: UpdateCompraDto) {
     return this.compraService.update(+id, updateCompraDto);
   }
 
-  @Delete(':id')
+  @Delete('deletar/:id')
   remove(@Param('id') id: string) {
     return this.compraService.remove(+id);
   }

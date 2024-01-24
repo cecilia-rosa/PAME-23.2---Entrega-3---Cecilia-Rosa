@@ -8,12 +8,12 @@ import { VendedorGuard } from './vendedorguard';
 export class ClienteController {
   constructor(private readonly clienteService: ClienteService) {}
 
-  @Post()
+  @Post('criar')
   create(@Body() createClienteDto: CreateClienteDto) {
     return this.clienteService.create(createClienteDto);
   }
 
-  @Get()
+  @Get('todos')
   @UseGuards(VendedorGuard)
   findAll() {
     return this.clienteService.findAll();
@@ -29,7 +29,7 @@ export class ClienteController {
     return this.clienteService.update(+id, updateClienteDto);
   }
 
-  @Delete(':id')
+  @Delete('deletar/:id')
   remove(@Param('id') id: string) {
     return this.clienteService.remove(+id);
   }

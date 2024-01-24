@@ -8,13 +8,13 @@ import { VendedorGuard } from './vendedorguard';
 export class CupomController {
   constructor(private readonly cupomService: CupomService) {}
 
-  @Post()
+  @Post('criar')
   @UseGuards(VendedorGuard)
   create(@Body() createCupomDto: CreateCupomDto) {
     return this.cupomService.create(createCupomDto);
   }
 
-  @Get()
+  @Get('todos')
   findAll() {
     return this.cupomService.findAll();
   }
@@ -24,13 +24,13 @@ export class CupomController {
     return this.cupomService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('atualizar/:id')
   @UseGuards(VendedorGuard)
   update(@Param('id') id: string, @Body() updateCupomDto: UpdateCupomDto) {
     return this.cupomService.update(+id, updateCupomDto);
   }
 
-  @Delete(':id')
+  @Delete('deletar/:id')
   @UseGuards(VendedorGuard)
   remove(@Param('id') id: string) {
     return this.cupomService.remove(+id);

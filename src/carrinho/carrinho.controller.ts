@@ -7,27 +7,23 @@ import { UpdateCarrinhoDto } from './dto/update-carrinho.dto';
 export class CarrinhoController {
   constructor(private readonly carrinhoService: CarrinhoService) {}
 
-  @Post()
+  @Post('/criar')
   create(@Body() createCarrinhoDto: CreateCarrinhoDto) {
     return this.carrinhoService.create(createCarrinhoDto);
   }
 
-  @Get()
-  findAll() {
-    return this.carrinhoService.findAll();
-  }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.carrinhoService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('atualizar/:id')
   update(@Param('id') id: string, @Body() updateCarrinhoDto: UpdateCarrinhoDto) {
     return this.carrinhoService.update(+id, updateCarrinhoDto);
   }
 
-  @Delete(':id')
+  @Delete('deletar/:id')
   remove(@Param('id') id: string) {
     return this.carrinhoService.remove(+id);
   }

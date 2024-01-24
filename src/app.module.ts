@@ -8,10 +8,11 @@ import { ProdutoModule } from './produto/produto.module';
 import { CupomModule } from './cupom/cupom.module';
 import { CategoriaModule } from './categoria/categoria.module';
 import { CarrinhoModule } from './carrinho/carrinho.module';
+import { EstoqueModule } from './estoque/estoque.module';
 
 
 @Module({
-  imports: [ClienteModule, VendedorModule, CompraModule, ProdutoModule, CupomModule, CategoriaModule, CarrinhoModule],
+  imports: [ClienteModule, VendedorModule, CompraModule, ProdutoModule, CupomModule, CategoriaModule, CarrinhoModule, EstoqueModule],
   controllers: [AppController],
   providers: [AppService],
 })

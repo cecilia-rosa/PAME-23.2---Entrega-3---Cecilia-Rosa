@@ -8,13 +8,13 @@ import { VendedorGuard } from './vendedorguard';
 export class CategoriaController {
   constructor(private readonly categoriaService: CategoriaService) {}
 
-  @Post('criarCategoria')
+  @Post('criar')
   @UseGuards(VendedorGuard)
   create(@Body() createCategoriaDto: CreateCategoriaDto) {
     return this.categoriaService.create(createCategoriaDto);
   }
 
-  @Get('todas_as_categorias')
+  @Get('todas')
   findAll() {
     return this.categoriaService.findAll();
   }
@@ -30,7 +30,7 @@ export class CategoriaController {
     return this.categoriaService.update(+id, updateCategoriaDto);
   }
 
-  @Delete(':id')
+  @Delete('deletar/:id')
   @UseGuards(VendedorGuard)
   remove(@Param('id') id: string) {
     return this.categoriaService.remove(+id);
