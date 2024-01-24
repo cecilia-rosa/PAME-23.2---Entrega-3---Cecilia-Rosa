@@ -1,5 +1,6 @@
 export class Compra {
-    id_compra: number;
+    id: number;
     id_cliente: number;
     preco_total: number;
+    data_compra: Date;
 }

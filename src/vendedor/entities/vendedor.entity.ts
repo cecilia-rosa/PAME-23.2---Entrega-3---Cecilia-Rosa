@@ -1,5 +1,5 @@
 export class Vendedor {
-    id_vendedor: number;
+    id: number;
     nome: string;
     senha: string;
 }

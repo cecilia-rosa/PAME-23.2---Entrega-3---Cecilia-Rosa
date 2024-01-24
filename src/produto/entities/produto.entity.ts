@@ -4,4 +4,6 @@ export class Produto {
     preco: number;
     estoque: number;
     id_categoria: number;
+    foto: string;
+    descricao: string;
 }

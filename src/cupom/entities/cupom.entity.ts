@@ -1,5 +1,5 @@
 export class Cupom {
-    id_cupom: number;
+    id: number;
     nome: string;
     desconto: number;
 }

@@ -1,4 +1,4 @@
 export class Carrinho {
-    id_carrinho: number;
+    id: number;
     id_cliente: number;
 }
