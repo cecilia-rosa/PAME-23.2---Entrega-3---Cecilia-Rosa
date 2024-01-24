@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { CompraService } from './compra.service';
 import { CreateCompraDto } from './dto/create-compra.dto';
 import { UpdateCompraDto } from './dto/update-compra.dto';
+import { VendedorGuard } from './vendedorguard';
 
 @Controller('compra')
 export class CompraController {
@@ -13,6 +14,7 @@ export class CompraController {
   }
 
   @Get()
+  @UseGuards(VendedorGuard)
   findAll() {
     return this.compraService.findAll();
   }
