@@ -8,13 +8,13 @@ import { VendedorGuard } from './vendedor.guard';
 export class ProdutoController {
   constructor(private readonly produtoService: ProdutoService) {}
 
-  @Post()
+  @Post('criar')
   @UseGuards(VendedorGuard)
   create(@Body() createProdutoDto: CreateProdutoDto) {
     return this.produtoService.create(createProdutoDto);
   }
 
-  @Get()
+  @Get('todos')
   findAll() {
     return this.produtoService.findAll();
   }
@@ -24,13 +24,13 @@ export class ProdutoController {
     return this.produtoService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('atualizar/:id')
   @UseGuards(VendedorGuard)
   update(@Param('id') id: string, @Body() updateProdutoDto: UpdateProdutoDto) {
     return this.produtoService.update(+id, updateProdutoDto);
   }
 
-  @Delete(':id')
+  @Delete('deletar/:id')
   @UseGuards(VendedorGuard)
   remove(@Param('id') id: string) {
     return this.produtoService.remove(+id);

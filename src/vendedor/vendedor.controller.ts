@@ -7,12 +7,12 @@ import { UpdateVendedorDto } from './dto/update-vendedor.dto';
 export class VendedorController {
   constructor(private readonly vendedorService: VendedorService) {}
 
-  @Post()
+  @Post('criar')
   create(@Body() createVendedorDto: CreateVendedorDto) {
     return this.vendedorService.create(createVendedorDto);
   }
 
-  @Get()
+  @Get('todos')
   findAll() {
     return this.vendedorService.findAll();
   }
@@ -22,12 +22,12 @@ export class VendedorController {
     return this.vendedorService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('atualizar/:id')
   update(@Param('id') id: string, @Body() updateVendedorDto: UpdateVendedorDto) {
     return this.vendedorService.update(+id, updateVendedorDto);
   }
 
-  @Delete(':id')
+  @Delete('deletar/:id')
   remove(@Param('id') id: string) {
     return this.vendedorService.remove(+id);
   }
