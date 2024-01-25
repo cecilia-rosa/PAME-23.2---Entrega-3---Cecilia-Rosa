@@ -4,3 +4,5 @@ import { CreateCompraDto } from './create-compra.dto';
 export class UpdateCompraDto extends PartialType(CreateCompraDto) {
     status: string;
 }
+
+
